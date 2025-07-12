@@ -5,8 +5,11 @@ def encrypt (original_text, shifting):
     shifted_text = ""
     original_text = original_text.lower()
     for letter in original_text:
-        shifted_position = (alphabet.index(letter) + (shifting))%26
-        shifted_text += alphabet[shifted_position]
+        if letter not in alphabet:
+            shifted_text += letter;
+        else:
+            shifted_position = (alphabet.index(letter) + (shifting))%26
+            shifted_text += alphabet[shifted_position]
     print(f'your encrypted text is:  {shifted_text}')
 
 def decrypt (encryted_texts, shifters):
@@ -14,8 +17,11 @@ def decrypt (encryted_texts, shifters):
     encryted_texts = encryted_texts.lower()
 
     for ency in encryted_texts:
-        shiters_position = (alphabet.index(ency) - shifters)%26
-        decrypted_text += alphabet[shiters_position];
+        if ency not in alphabet:
+            decrypted_text += ency;
+        else:
+            shiters_position = (alphabet.index(ency) - shifters)%26
+            decrypted_text += alphabet[shiters_position];
     print(f'The Decrypted version of your text is: {decrypted_text}')
 
 
