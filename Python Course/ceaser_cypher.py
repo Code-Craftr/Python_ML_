@@ -36,3 +36,5 @@ if check == 'yes':
     provided = input('Please enter the text you want to decrypt: ')
     shifting = int(input('please enter the how much shifting is done in this text: '))
     decrypt(provided, shifting)
+
+print('Thanks for using our product')
